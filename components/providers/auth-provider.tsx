@@ -20,7 +20,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 const mockAdmin = {
   email: "admin@coverup.com",
   password: "admin123",
-  name: "Azola Tshobonga",
+  name: "PS",
   role: "Admin",
 }
 
