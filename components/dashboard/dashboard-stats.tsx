@@ -4,14 +4,14 @@ import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
 
 const mockStats = {
-  totalSearches: 9786,
-  searchesGrowth: 13,
-  totalParlours: 7353,
-  parloursGrowth: 20,
-  newSearches: 1665,
-  newSearchesGrowth: 5,
-  newParlours: 165,
-  newParloursGrowth: 9,
+  totalSearches: 0,
+  searchesGrowth: 0,
+  totalParlours: 0,
+  parloursGrowth: 0,
+  newSearches: 0,
+  newSearchesGrowth: 0,
+  newParlours: 0,
+  newParloursGrowth: 0,
 }
 
 const stats = [

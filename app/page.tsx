@@ -59,7 +59,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Admin Portal
+              
               </motion.h2>
 
               <motion.div

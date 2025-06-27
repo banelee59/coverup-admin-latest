@@ -8,11 +8,8 @@ import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 
 const navItems = [
-  { name: "POLICIES", href: "/policies" },
-  { name: "CLAIMS", href: "/claims" },
   { name: "USERS", href: "/users" },
   { name: "PARLOURS", href: "/parlours" },
-  { name: "DOCUMENTS", href: "/documents" },
   { name: "REPORTS", href: "/reports" },
   { name: "SETTINGS", href: "/settings" },
 ]
@@ -69,7 +66,12 @@ export function Navigation() {
             <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
               <User className="w-5 h-5 text-white" />
             </div>
-            <Button onClick={handleLogout} variant="outline" size="sm" className="text-gray-600 hover:text-gray-900">
+            <Button
+              onClick={handleLogout}
+              variant="outline"
+              size="sm"
+              className="text-gray-600 hover:text-gray-900 bg-transparent"
+            >
               Logout
             </Button>
           </div>
