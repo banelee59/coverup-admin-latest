@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
 
 interface TurtleMascotProps {
   variant: "thumbsup" | "working"
@@ -17,19 +16,10 @@ export function TurtleMascot({ variant }: TurtleMascotProps) {
       whileHover={{ scale: 1.05 }}
     >
       <div className="w-80 h-80 relative">
-        {variant === "thumbsup" ? (
-          <Image
-            src="/images/turtle-mascot.png"
-            alt="Friendly turtle mascot giving thumbs up"
-            fill
-            className="object-contain"
-          />
-        ) : (
-          // For working variant, we'll use a placeholder since we don't have the working turtle image
-          <div className="w-full h-full bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
-            <div className="text-6xl">🐢💻</div>
-          </div>
-        )}
+        {/* Removed image, keeping placeholder for future use */}
+        <div className="w-full h-full bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+          <div className="text-6xl">{variant === "thumbsup" ? "👍" : "💻"}</div>
+        </div>
       </div>
     </motion.div>
   )

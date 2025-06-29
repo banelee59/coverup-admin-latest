@@ -22,7 +22,7 @@ const mockAdmins = [
   {
     email: "superadmin@coverup.com",
     password: "super123",
-    name: "Azola Tshobonga",
+    name: "PS",
     role: "Super Admin" as const,
     permissions: ["users", "parlours", "reports", "settings", "all"],
   },
