@@ -7,11 +7,11 @@ import { User } from "lucide-react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 
-const navItems = [
-  { name: "USERS", href: "/users" },
-  { name: "PARLOURS", href: "/parlours" },
-  { name: "REPORTS", href: "/reports" },
-  { name: "SETTINGS", href: "/settings" },
+const allNavItems = [
+  { name: "USERS", href: "/users", permission: "users" },
+  { name: "PARLOURS", href: "/parlours", permission: "parlours" },
+  { name: "REPORTS", href: "/reports", permission: "reports" },
+  { name: "SETTINGS", href: "/settings", permission: "settings" },
 ]
 
 export function Navigation() {
@@ -22,6 +22,21 @@ export function Navigation() {
   const handleLogout = () => {
     logout()
     router.push("/")
+  }
+
+  // Filter navigation items based on user permissions with proper safety checks
+  const navItems = allNavItems.filter((item) => {
+    // Check if user exists and has permissions array
+    if (!user || !user.permissions || !Array.isArray(user.permissions)) {
+      return false
+    }
+    
+    return user.permissions.includes(item.permission) || user.permissions.includes("all")
+  })
+
+  // Don't render navigation if user is not loaded
+  if (!user) {
+    return null
   }
 
   return (
@@ -60,8 +75,8 @@ export function Navigation() {
           {/* User Info */}
           <div className="flex items-center space-x-4">
             <div className="text-right">
-              <p className="text-sm font-medium text-gray-900">{user?.name}</p>
-              <p className="text-xs text-gray-500">{user?.role}</p>
+              <p className="text-sm font-medium text-gray-900">{user?.name || 'User'}</p>
+              <p className="text-xs text-gray-500">{user?.role || 'Role'}</p>
             </div>
             <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
               <User className="w-5 h-5 text-white" />
