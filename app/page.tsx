@@ -136,13 +136,13 @@ export default function HomePage() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.2 }}
             >
-              <Card className="max-w-2xl mx-auto p-6 bg-blue-50 border-[#00BFFF]">
+              {/* <Card className="max-w-2xl mx-auto p-6 bg-blue-50 border-[#00BFFF]">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Secure Access Required</h3>
                 <p className="text-gray-600 text-sm">
                   This portal requires authorized access credentials. All activities are monitored and logged for
                   security purposes.
                 </p>
-              </Card>
+              </Card> */}
             </motion.div>
           </div>
         </motion.div>
